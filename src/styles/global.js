@@ -63,7 +63,6 @@ const GlobalStyles = createGlobalStyle`
       border: 0;
       outline: none;
       cursor: pointer;
-      background-color: transparent;
     }
 
     ul {

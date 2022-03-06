@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import { components } from 'assets';
 import Logo from 'components/misc/Logo';
 import { Wrapper, Message, Menu } from './styles';
 
 function Header() {
+  const cartSize = useSelector(state => state.cart.length);
   return (
     <Wrapper>
       <header>
@@ -18,7 +21,10 @@ function Header() {
           <Link to="/">
             <Logo />
           </Link>
-          <components.ShopBag />
+          <Link to="/carrinho-de-compras">
+            <components.ShopBag />
+            <span>{cartSize} itens</span>
+          </Link>
         </Menu>
       </header>
     </Wrapper>

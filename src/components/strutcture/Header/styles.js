@@ -45,6 +45,14 @@ export const Menu = styled.div`
     height: 20px;
   }
 
+  a {
+    display: flex;
+    align-items: center;
+    span {
+      color: #000;
+    }
+  }
+
   ${media.greaterThan('medium')`
     padding: 1rem 6rem;
   `}
