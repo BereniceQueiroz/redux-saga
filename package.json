@@ -34,5 +34,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "Projeto redux-saga",
+  "main": "index.js",
+  "repository": "https://github.com/BereniceQueiroz/redux-saga.git",
+  "author": "Berenice Queiroz",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.10.0",
+    "eslint-config-alloy": "^4.5.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "git-commit-msg-linter": "^4.1.1",
+    "lint-staged": "^12.3.5",
+    "prettier": "^2.5.1"
   }
 }
