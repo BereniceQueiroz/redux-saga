@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from 'components/strutcture/Header';
-import * as S from './styles';
-// import products from 'assets/mocks/products';
+import { Wrapper, Title } from './styles';
+import Card from 'components/misc/Card';
 
 function Home() {
   const [productsList, setProductsList] = useState([]);
@@ -12,7 +12,7 @@ function Home() {
         let productsResponse = await fetch('./products.json');
         let products = await productsResponse.json();
         console.log(products);
-        setProductsList(products);
+        setProductsList(products.products);
       } catch (e) {
         console.log(e);
       }
@@ -21,10 +21,22 @@ function Home() {
   }, []);
 
   return (
-    <S.Wrapper>
+    <Wrapper>
       <Header />
-      <h1>Roupas</h1>
-    </S.Wrapper>
+      <Title>Roupas Femininas</Title>
+      {productsList.map((products, index) => (
+        <Card
+          key={index}
+          image={products.image}
+          name={products.name}
+          price={products.price}
+          portin={products.portin}
+          size={products.sizes
+            .filter(size => size.available === true)
+            .map(size => size.size)}
+        />
+      ))}
+    </Wrapper>
   );
 }
 
